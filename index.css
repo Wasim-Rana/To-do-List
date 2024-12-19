@@ -5,7 +5,7 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background-color: #efc0de;
+    background-image: radial-gradient(circle, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,32 +16,36 @@ body {
 
 .container {
     background-color: transparent;
+    backdrop-filter: blur(10px);
     padding: 20px;
-    border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius:16px;
     width: 50%;
     height: 80%;
     text-align: center;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
-
+.container:hover{
+    border-radius: 16px;
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    transition: all 0.3s ease;
+}
 h1 {
     margin-bottom: 20px;
 }
-
 .input-container {
     display: flex;
     justify-content: center;
     margin: 40px 0px 30px 0px;
     padding: 10px;
 }
-
 #todo-input {
     padding: 10px;
     width: 70%;
     border: none;
     border-radius: 4px;
 }
-
 #add_btn {
     background-color: #161817;
     border: none;
@@ -54,21 +58,15 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-
 #add_btn span {
     font-size: 24px;
-  line-height: 0;
+    line-height: 0;
 }
-
 ul {
     list-style-type: none;
     padding: 10px;
-
 }
-
-
 li {
-    
     background-color: #f9f9f9;
     padding: 10px;
     margin-bottom: 10px;
@@ -76,31 +74,13 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 3px 4px 0px 0px #020202;
 }
 
 li.completed {
     text-decoration: line-through;
     color: grey;
 }
-
-/* li button {
-    background: none;
-    border: none;
-    cursor: pointer;
-
-}
-
-li button.edit {
-    color: #161817;
-}
-
-li button.delete {
-    color: #161817;
-}
-li input[type="checkbox"] {
-    margin-left: 0px 5px;
-} */
-
 .task-actions {
     display: flex;
     align-items: center;
@@ -112,17 +92,16 @@ li input[type="checkbox"] {
     cursor: pointer;
     margin: 0px 20px 0px 20px;
 }
-
 .task-actions button.edit {
     color: #161817;
+    cursor: pointer;
     
 }
-
 .task-actions button.delete {
     color: #161817;
     
 }
-
 .task-actions input[type="checkbox"] {
     margin-right: 15px;
+    cursor: pointer;
 }
